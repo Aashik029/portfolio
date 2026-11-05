@@ -14,3 +14,8 @@
 [2026-11-05T16:54:52.092Z] WebSocket server started on port 23456
 [2026-11-05T16:54:52.096Z] MCP Browser Server connected to transport
 [2026-11-05T16:54:52.111Z] Handling tools/list request
+[2026-11-05T18:10:40.631Z] --- SERVER CONSTRUCTOR START ---
+[2026-11-05T18:10:40.631Z] Config: {"name":"Browser-Core-MCP","version":"0.0.4"}
+[2026-11-05T18:10:40.633Z] WebSocket server started on port 23456
+[2026-11-05T18:10:40.638Z] MCP Browser Server connected to transport
+[2026-11-05T18:10:40.644Z] Handling tools/list request
