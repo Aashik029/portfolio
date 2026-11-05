@@ -1,0 +1,34 @@
+/* AASHIK — motion layer: reveal-on-scroll + hero entrance (respects prefers-reduced-motion) */
+
+.reveal { opacity: 0; transform: translateY(44px); filter: blur(8px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1), filter .8s ease; will-change: opacity, transform, filter; }
+.reveal.is-visible { opacity: 1; transform: none; filter: none; }
+
+/* hero load-in */
+.Hero-module___w2HtG__title { animation: wordIn 1.15s .05s cubic-bezier(.22,1,.36,1) backwards; }
+@keyframes wordIn { from { opacity: 0; transform: translateY(84px) scaleX(1.04); } to { opacity: 1; transform: none; } }
+.Hero-module___w2HtG__role { animation: heroUp .9s .38s cubic-bezier(.22,1,.36,1) backwards; }
+.Hero-module___w2HtG__captionRow { animation: heroUp .9s .5s cubic-bezier(.22,1,.36,1) backwards; }
+.Hero-module___w2HtG__bottomRow { animation: heroUp .9s .62s cubic-bezier(.22,1,.36,1) backwards; }
+.Hero-module___w2HtG__portrait { animation: portraitIn 1.35s .15s cubic-bezier(.22,1,.36,1) backwards; }
+@keyframes portraitIn { from { opacity: 0; transform: translateY(90px) scale(.92); } to { opacity: 1; transform: none; } }
+@keyframes heroUp { from { opacity: 0; transform: translateY(42px); } to { opacity: 1; transform: none; } }
+.Navbar-module__cRh5nW__header { animation: navDown .8s .1s ease backwards; }
+@keyframes navDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: none; } }
+
+/* ambient float for hero rings & dot */
+.Hero-module___w2HtG__orbitField { animation: orbitFloat 11s ease-in-out infinite alternate; }
+@keyframes orbitFloat { from { margin-top: max(-33vw, -450px); } to { margin-top: max(-33vw, -420px); } }
+.Hero-module___w2HtG__orbitField > span { animation: dotBlink 3.2s ease-in-out infinite; }
+@keyframes dotBlink { 0%,100% { box-shadow: 0 0 18px rgba(197,255,10,.25); } 50% { box-shadow: 0 0 34px rgba(197,255,10,.65); } }
+.Hero-module___w2HtG__contact:hover .Hero-module___w2HtG__arrowCircle { transform: rotate(-45deg) scale(1.08); }
+
+/* subtle hover lift on interactive cards/links */
+.WorkSections-module__9ylKlW__projectRow .WorkSections-module__9ylKlW__outlineButton,
+.WorkSections-module__9ylKlW__projectRow .lime-button,
+.EditorialSections-module__YfyJba__textLink { transition: transform .25s ease; }
+.WorkSections-module__9ylKlW__projectRow .lime-button:hover,
+.WorkSections-module__9ylKlW__projectRow .WorkSections-module__9ylKlW__outlineButton:hover { transform: translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .Hero-module___w2HtG__title, .Hero-module___w2HtG__role, .Hero-module___w2HtG__captionRow, .Hero-module___w2HtG__bottomRow, .Hero-module___w2HtG__portrait, .Navbar-module__cRh5nW__header, .Hero-module___w2HtG__orbitField, .Hero-module___w2HtG__orbitField > span { animation: none !important; transition: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+}
